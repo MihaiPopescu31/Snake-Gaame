@@ -1,0 +1,74 @@
+/* Tailwind imports */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Basic styling */
+body {
+    background-color: #1a202c; /* Dark background color for the game page */
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scrolling */
+    font-family: Arial, sans-serif; /* Font style */
+}
+
+/* Container for score and lives */
+#scoreContainer {
+    @apply text-white text-xl mb-2 text-center;
+}
+
+/* Game container */
+#gameContainer {
+    @apply relative w-600 h-600;
+}
+
+/* Intro screen */
+#introScreen {
+    @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-2xl text-white text-center;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Game Over screen */
+#gameOverScreen {
+    @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-4xl text-white text-center;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Button styles */
+button {
+    @apply rounded px-4 py-2 cursor-pointer text-lg transition-colors duration-300;
+}
+
+/* Game Over text styles */
+#gameOverScreen h2 {
+    @apply text-white;
+}
+
+/* Restart Game button specific styles */
+#restartGameButton {
+    @apply bg-red-600 text-white; /* Red button color */
+    border: 2px solid #b71c1c; /* Darker red border for better contrast */
+}
+
+/* Restart Game button hover styles */
+#restartGameButton:hover {
+    @apply bg-red-700; /* Darker red on hover */
+}
+
+/* Pause and Resume button specific styles */
+#pauseGameButton {
+    @apply bg-yellow-500;
+}
+
+#resumeGameButton {
+    @apply bg-green-500;
+}
+
+/* Hidden class to hide elements */
+.hidden {
+    display: none !important;
+}

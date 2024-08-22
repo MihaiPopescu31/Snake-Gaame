@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="bg-gray-900 flex flex-col items-center justify-center h-screen m-0">
+
+    <h1 class="text-4xl text-white mb-4">Snake Game</h1>
+
+    <!-- Container for Score and Lives -->
+    <div id="scoreContainer" class="text-white text-xl mb-2 text-center">
+        <span id="score">Score: 0</span> | <span id="lives">Lives: 3</span>
+    </div>
+
+    <!-- Game Container -->
+    <div id="gameContainer" class="relative">
+        <canvas id="gameCanvas" width="600" height="600" class="border-4 border-yellow-500 bg-gray-600"></canvas>
+
+        <!-- Intro Screen -->
+        <div id="introScreen" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-2xl text-white text-center">
+            <img src="{{ url_for('static', filename='images/snake.png') }}" alt="Snake Image" class="mb-4">
+            <h2>Press Space to Start</h2>
+        </div>
+
+        <!-- Game Over Screen -->
+        <div id="gameOverScreen" class="hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-4xl text-white text-center">
+            <h2>Game Over</h2>
+            <button id="restartGameButton" class="mt-4 px-4 py-2 bg-red-600 text-white rounded">Restart Game</button>
+        </div>
+    </div>
+
+    <!-- Control Buttons -->
+    <div class="mt-4">
+        <button id="pauseGameButton" class="px-4 py-2 bg-yellow-600 text-white rounded">Pause</button>
+        <button id="resumeGameButton" class="hidden px-4 py-2 bg-green-600 text-white rounded">Resume</button>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/javascript.js') }}"></script>
+</body>
+</html>
