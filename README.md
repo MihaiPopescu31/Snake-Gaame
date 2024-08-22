@@ -1,11 +1,40 @@
 # Snake Game
 
 The Snake Game is a classic arcade game implemented with Flask for the backend and JavaScript for the game logic. Players control a snake to collect food and avoid collisions. The game features an intro screen, score tracking, pause and resume functionality, and a game over screen.
-![image](https://github.com/user-attachments/assets/46447fa8-3ba0-4959-a2ce-7f01279d0d22) ![image](https://github.com/user-attachments/assets/61f083b5-19e7-4098-92f5-66e1a05f9f69)
+![image](https://github.com/user-attachments/assets/46447fa8-3ba0-4959-a2ce-7f01279d0d22) ![image](https://github.com/user-attachments/assets/45155935-155a-45da-a23d-d2603705b3c9)
+
+
+A short video of the game
+
+https://github.com/user-attachments/assets/eb3a5492-50e1-42c2-8cd7-38045379ad79
 
 
 
+## Snake Game: Logic and Code Overview
+### Objective
+Control a snake that moves around the screen, eating food to grow longer. Avoid crashing into walls or the snake's own body. The game ends when the snake loses all its lives or collides with an obstacle.
 
+### Key Components
+1. Snake: Represented by an array of segments, each with x and y coordinates. The snake moves by updating the position of its head and shifting the rest of its body.
+
+2. Food: A single object with x and y coordinates. When the snake's head overlaps with the food, the snake grows, and the food is placed randomly elsewhere.
+
+3. Grid: The game is played on a grid, defined by the dimensions of the canvas. Each movement of the snake is a shift of its head to an adjacent cell.
+
+### Code Overview
+#### HTML (index.html):
+
+- Sets up the game structure, including the canvas for rendering the game, score/lives display, and control buttons (pause/resume).
+#### JavaScript (javascript.js):
+
+- Game Loop: Continuously runs, moving the snake and checking for collisions.
+- Movement: Handles user input (arrow keys) to change the snake's direction.
+- Collision Detection: Checks if the snake hits a wall, itself, or eats food.
+- Score/Lives: Updates the score when food is eaten and reduces lives on collisions.
+
+#### CSS (styles.css):
+
+- Styles the game interface, ensuring the canvas and buttons are well-positioned and visually appealing.
 
 ## Features
 
