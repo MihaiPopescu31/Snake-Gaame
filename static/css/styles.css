@@ -19,21 +19,25 @@ body {
 
 /* Game container */
 #gameContainer {
-    @apply relative w-600 h-600;
+    @apply relative;
+}
+
+/* Canvas */
+#gameCanvas {
+    max-width: 100%;
+    height: auto;
 }
 
 /* Intro screen */
 #introScreen {
     @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-2xl text-white text-center;
-    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
     padding: 20px;
     border-radius: 10px;
 }
 
 /* Game Over screen */
 #gameOverScreen {
-    @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-4xl text-white text-center;
-    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    @apply hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-4xl text-white text-center;
     padding: 20px;
     border-radius: 10px;
 }
@@ -41,11 +45,6 @@ body {
 /* Button styles */
 button {
     @apply rounded px-4 py-2 cursor-pointer text-lg transition-colors duration-300;
-}
-
-/* Game Over text styles */
-#gameOverScreen h2 {
-    @apply text-white;
 }
 
 /* Restart Game button specific styles */
@@ -71,4 +70,44 @@ button {
 /* Hidden class to hide elements */
 .hidden {
     display: none !important;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    #gameContainer {
+        width: 90vw; /* Adjust width for smaller screens */
+        height: auto;
+    }
+
+    #gameCanvas {
+        width: 100%;
+        height: auto;
+    }
+
+    #introScreen, #gameOverScreen {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2.5rem; /* Smaller font size for smaller screens */
+    }
+
+    .text-xl {
+        font-size: 1.25rem; /* Adjust text size for smaller screens */
+    }
+
+    .mt-4 {
+        margin-top: 1rem; /* Adjust margin for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem; /* Further reduce font size for very small screens */
+    }
+
+    #gameContainer {
+        width: 100vw; /* Full width on very small screens */
+        height: 50vw; /* Maintain aspect ratio */
+    }
 }
